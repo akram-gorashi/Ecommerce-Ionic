@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cars</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-spinner class="spin" color="primary" name="dots" *ngIf="isLoading"></ion-spinner>
+  <div class="products" *ngIf="!isLoading">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" *ngFor="let p of products">
+          <ion-card [routerLink]="['/','home','tabs','explore',p?.id]">
+            <ion-card-content>
+              <ion-img class="v-img"
+                src="https://media.wired.com/photos/5b22c5c4b878a15e9ce80d92/master/pass/iphonex-TA.jpg">
+              </ion-img>
+              <p class="price"> {{ p.price | currency: 'INR'|slice:0:11 }} </p>
+              <ion-label class="tittle">{{p.title|slice:0:11}}..</ion-label>
+              <p class="tittle">{{p.desc|slice:0:11}}..</p>
+            </ion-card-content>
+
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

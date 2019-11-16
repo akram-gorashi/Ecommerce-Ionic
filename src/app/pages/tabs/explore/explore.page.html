@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>explore</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar placeholder="Find Cars, Mobile, Phones and more..."></ion-searchbar>
+  <p>Brows categries</p>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 offset-3 text-center [routerLink]="['/','mobiles']">
+
+        <ion-icon  name="phone-portrait" style="zoom: 4.0;"></ion-icon>
+        <p>Mobiles</p>
+
+      </ion-col>
+      <ion-col col-6 offset-3 text-center [routerLink]="['/','cars']">
+
+        <ion-icon name="logo-model-s" style="zoom: 4.0;"></ion-icon>
+        <p>Cars</p>
+
+      </ion-col>
+      <ion-col col-6 offset-3 text-center [routerLink]="['/','fashion']">
+
+        <ion-icon name="shirt" style="zoom: 4.0;"></ion-icon>
+        <p>Fashion</p>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 offset-3 text-center [routerLink]="['/','elec']">
+
+        <ion-icon name="laptop" style="zoom: 4.0;"></ion-icon>
+        <p>Electronics</p>
+
+      </ion-col>
+      <ion-col col-6 offset-3 text-center [routerLink]="['/','jobs']">
+
+        <ion-icon name="briefcase" style="zoom: 4.0;" ></ion-icon>
+        <p>Jobs</p>
+
+      </ion-col>
+      <ion-col col-6 offset-3 text-center [routerLink]="['/','services']">
+
+        <ion-icon name="build" style="zoom: 4.0;"></ion-icon>
+        <p>Services</p>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

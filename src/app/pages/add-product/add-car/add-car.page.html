@@ -1,0 +1,139 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/tabs/sell">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Cars</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onAddCar(f)">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Brand</ion-label>
+            <ion-input type="text" autocomplete autocorrect 
+            ngModel 
+            name="brand" 
+            #brand="ngModel" 
+            required
+            minlength="2"></ion-input>
+          </ion-item>
+            <ion-item *ngIf="!brand.valid && brand.touched" lines="none">
+              <ion-label color="danger">
+                Brand is mandatory
+              </ion-label>
+
+            </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Year</ion-label>
+            <ion-select
+            ngModel 
+            name="year">
+            <ion-select-option value="1990">1990</ion-select-option>
+            <ion-select-option value="1991">1991</ion-select-option>
+            <ion-select-option value="1992">1992</ion-select-option>
+            <ion-select-option value="1993">1993</ion-select-option>
+            <ion-select-option value="1994">1994</ion-select-option>
+            <ion-select-option value="1995">1995</ion-select-option>
+            <ion-select-option value="1996">1996</ion-select-option>
+            <ion-select-option value="1997">1997</ion-select-option>
+            <ion-select-option value="1998">1998</ion-select-option>
+<ion-select-option value="1999">1999</ion-select-option>
+          </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">KM driven</ion-label>
+            <ion-input type="number" 
+            ngModel 
+            name="km"
+            required 
+            #km="ngModel"
+            ></ion-input>
+          </ion-item>
+          <ion-item *ngIf="km.invalid && km.touched " lines="none">
+            <ion-label color="danger">
+              KM driven is required.
+            </ion-label>
+
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="3" offset-sm="3">
+          <ion-item>
+            <ion-select placeholder="Fuel" 
+            ngModel 
+            name="fuel">
+              <ion-label placeholder="Fuel" position="floating">Fuel</ion-label>
+              <ion-select-option value="Diesel">Diesel</ion-select-option>
+              <ion-select-option value="LPG">LPG</ion-select-option>
+              <ion-select-option value="Petrol">Petrol</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size-sm="3">
+          <ion-item>
+            <ion-label position="floating">Price</ion-label>
+            <ion-input type="number" ngModel name="price"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Title</ion-label>
+            <ion-input type="text" autocomplete autocorrect 
+            ngModel 
+            name="title"
+            required 
+            minlength="6"
+            #title="ngModel"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="title.invalid && title.touched " lines="none">
+            <ion-label color="danger">
+              Title should be at least 6 charecters.
+            </ion-label>
+
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Short Description</ion-label>
+            <ion-textarea rows="3" 
+            ngModel 
+            name="desc" 
+            required 
+            minlength="15" 
+            #descInput="ngModel"></ion-textarea>
+          </ion-item>
+          <ion-item *ngIf="descInput.invalid && descInput.touched " lines="none">
+            <ion-label color="danger">
+              Should be at least 15 charecters.
+            </ion-label>
+
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-input type="text" name="car" hidden ngModel ></ion-input>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-button type="submit" color="primary" [disabled]="!f.valid">Next</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

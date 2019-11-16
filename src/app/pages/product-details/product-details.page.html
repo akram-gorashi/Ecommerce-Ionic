@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end" padding>
+      <ion-icon name="trash" style="zoom: 1.5;" (click)="onDelete(product.id)"></ion-icon>
+    </ion-buttons>
+    <ion-title>{{product?.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-slides autoplay="3000" loop="true">
+      <!--<ion-slide *ngFor="let image of product.images">-->
+      <ion-slide>
+        <ion-img src='https://ymimg1.b8cdn.com/resized/car_model/4660/logo/mobile_listing_main_11650_st1280_046.jpg'>
+        </ion-img>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-card-content>
+      <ion-card-title>
+        <!--<ion-chip *ngFor="let cat of product.categories" style="margin-left: 5px;">-->
+
+        <ion-label> {{ product?.price| currency: 'INR' }} </ion-label>
+        &nbsp;<br>
+        {{ product?.title }}
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+  <div padding>
+    <ion-list>
+      <ion-item>
+
+        <ion-grid justify-content-start padding>
+          <ion-row>
+            <ion-col>
+              <ion-label>Details:</ion-label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              BRAND
+            </ion-col>
+            <ion-col>
+              {{product?.brand}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              FUEL
+            </ion-col>
+            <ion-col>
+              {{product?.fuel}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              KM DRIVEN
+            </ion-col>
+            <ion-col>
+              {{product?.km}} km
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              YEAR
+            </ion-col>
+            <ion-col>
+              {{product?.year}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              Description
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              {{product?.desc}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
